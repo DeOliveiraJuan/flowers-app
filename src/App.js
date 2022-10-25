@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { Route, Routes } from "react-router-dom";
 import './App.css';
+import NavBar from './components/misc/Navbar';
+import { useAuthContext } from "./contexts/AuthContext";
+import Login from './screens/Login/Login';
+import Signup from "./screens/Signup/Signup";
 
 function App() {
+ // const { isAuthFetched } = useAuthContext()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <NavBar />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
