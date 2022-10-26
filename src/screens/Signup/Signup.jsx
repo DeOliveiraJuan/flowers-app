@@ -51,12 +51,12 @@ function Signup() {
                     setFieldError(errorKey, err.response.data.errors[errorKey])
                 })
         })
-    .finally(() => {
+        .finally(() => {
         setSubmitting(false)
     })
 }
 
-const [form, setForm] = useState({ email: '', name: '' })
+const [form, setForm] = useState({ email: '', name: ''})
 
 const handleOnChange = (event) => {
     const { name, value } = event.target

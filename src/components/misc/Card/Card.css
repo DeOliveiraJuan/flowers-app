@@ -1,0 +1,15 @@
+.btn-light, .btn-light:hover, .btn-light:active, .btn-light:visited {
+    background-color: #A29F44 !important;
+}
+
+.card-bottom {
+    background-color: #faf7f3;
+    padding: 0;
+    margin: 0;
+}
+
+.card-body {
+    background-color: #faf7f3;
+    
+
+}
