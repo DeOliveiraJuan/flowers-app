@@ -4,12 +4,13 @@
 }
 
 .hero-image {
-  background-image:  url("https://images4.alphacoders.com/296/296638.jpg");
+  background-image:  url("https://cdn.suwalls.com/wallpapers/flowers/beautiful-white-tulips-53777-1920x1200.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  filter: opacity(70%);
 }
 
 .hero-text {
@@ -18,12 +19,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #faf7f2;
+  color: black
 }
 
 .subtitle {
-    background-color: #83411d;
+    background-color: #B35642;
     margin: 0px !important;
     padding: 5px !important;
     color: #faf7f2; ;
 }
+
+.hero-btn {
+  border-radius: 20px;
+}
+
+h1 {
+  border: none;
+}
+

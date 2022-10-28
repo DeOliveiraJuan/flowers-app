@@ -3,11 +3,11 @@ import './App.css';
 import NavBar from './components/misc/Navbar/Navbar'
 //import { useAuthContext } from "./contexts/AuthContext";
 import HomeScreen from "./screens/Home/HomeScreen";
-import Login from './screens/Login/Login';
-import Signup from "./screens/Signup/Signup";
+import Login from './screens/Login/LoginScreen';
+import Signup from "./screens/Signup/SignupScreen";
 
 function App() {
- // const { isAuthFetched } = useAuthContext()
+//const { isAuthFetched } = useAuthContext()
 
   return (
     <div className="App">

@@ -1,15 +1,30 @@
 .btn-light, .btn-light:hover, .btn-light:active, .btn-light:visited {
-    background-color: #A29F44 !important;
+    background-color: #B35642 !important;
 }
 
-.card-bottom {
+.card {
     background-color: #faf7f3;
-    padding: 0;
-    margin: 0;
 }
 
 .card-body {
     background-color: #faf7f3;
-    
-
+    margin: 0;
+    padding: 0;  
 }
+
+.card-bottom {
+    background-color: #faf7f3;
+    margin: 0;
+    padding: 0;
+}
+
+.card-title {
+    margin: 0;
+    padding: 0;   
+}
+
+.card-price h2 {
+    margin: 0;
+    padding: 0;   
+}
+

@@ -1,9 +1,10 @@
+import React from 'react'
 import { useFormik } from 'formik';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import Input from '../../components/misc/Input';
+import Input from '../../components/misc/Input/Input';
 import { createUser } from '../../services/UserService';
 import SignupSchema from './SignupSchema';
+import './SignupScreen.css'
 
 const INITIAL_VALUES = {
     name: '',
@@ -29,21 +30,26 @@ function Signup() {
 
     function onSubmit(values) {
         const formData = new FormData()
-
-        for (let value in values) {
+        
+        console.log(values) //Valores correctos, está entrando
+        
+        for(let value in values) {
             formData.append(value, values[value])
         }
+        
+        console.log(formData) //Object vacío
 
         createUser(formData)
         .then(user => {
-            console.log(user);
+            console.log('ENTRA EN CREATEUSER 👍🏻', user);
 
             navigate('/login', { state: {
                 email: values.email
             } })
         })
         .catch(err => {
-            console.log(err.response.data)
+           // console.log(err.response.data)
+           console.log("ENTRA EN ERROR ❌")
 
             err.response.data &&
              Object.keys(err.response.data.errors)
@@ -56,17 +62,11 @@ function Signup() {
     })
 }
 
-const [form, setForm] = useState({ email: '', name: ''})
 
-const handleOnChange = (event) => {
-    const { name, value } = event.target
-
-    setForm({ ...form, [name]: value })
-  }
 
 return (
-    <div className="Signup container">
-      <h1>Registrarse</h1>
+    <div className="signup container mt-5 w-25">
+      <h1 className="text-center">Registrate</h1>
 
       <form onSubmit={handleSubmit}>
         <Input
@@ -128,13 +128,12 @@ return (
           onBlur={handleBlur}
         />
 
-        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+        <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
           {isSubmitting ? 'Loading' : 'Submit'}
         </button>
       </form>
-    </div>
+      </div>
 )
-
 }
 
 export default Signup;

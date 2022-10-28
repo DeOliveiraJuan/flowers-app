@@ -1,10 +1,11 @@
 import { useFormik } from 'formik';
-import { useContext } from 'react';
+import {  React, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import Input from '../../components/misc/Input';
+import Input from '../../components/misc/Input/Input';
 import AuthContext from '../../contexts/AuthContext';
 import { login as userLogin } from '../../services/AuthService';
 import LoginSchema from './LoginSchema'
+import './LoginScreen.css'
 
 function Login() {
     const { state } = useLocation()
@@ -36,14 +37,15 @@ function Login() {
     }
 
     return (
-        <div className="Login container">
-          <h1>Login</h1>
+        <div className="container mt-5 mb-2 w-25">
+          <h1 className='text-center'>Login</h1>
+          <p className='text-center'>¿Aún no tienes cuenta? Pincha <a clasName="" href="*">aquí.</a></p>
     
           <form onSubmit={handleSubmit}> 
     
-            <Input
+            <Input 
               label="Email"
-              placeholder="Introduce tú email"
+              placeholder="Introduce tu email"
               type="email"
               name="email"
               id="email"
@@ -55,7 +57,7 @@ function Login() {
     
             <Input
               label="Password"
-              placeholder="Write your password"
+              placeholder="Introduce tu contraseña"
               type="password"
               name="password"
               id="password"
@@ -64,8 +66,10 @@ function Login() {
               error={errors.password}
               onBlur={handleBlur}
             />
+
+            <a clasName="" href="*">¿Olvidaste tu contraseña?</a>
     
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
               {isSubmitting ? 'Loading' : 'Login'}
             </button>
           </form>

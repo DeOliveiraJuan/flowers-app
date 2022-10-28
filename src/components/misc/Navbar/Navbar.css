@@ -6,14 +6,17 @@
 
 .navbar {
     background-color: #3A5248 !important;
-    
   }
 
+.btn-outline-light {
+    border: none;
+    }
+
 .btn-outline-light:hover {
-    color:  #FAF7F2;
-    background-color: #A29F44;
-    border-color: #A29F44;
+    color: #A29F44;
+    background-color: transparent;  
 }
+
 
 
 
