@@ -6,6 +6,7 @@ import AuthContext from '../../contexts/AuthContext';
 import { login as userLogin } from '../../services/AuthService';
 import LoginSchema from './LoginSchema'
 import './LoginScreen.css'
+import { Link } from 'react-router-dom'
 
 function Login() {
     const { state } = useLocation()
@@ -39,12 +40,12 @@ function Login() {
     return (
         <div className="container mt-5 mb-2 w-25">
           <h1 className='text-center'>Login</h1>
-          <p className='text-center'>¿Aún no tienes cuenta? Pincha <a clasName="" href="*">aquí.</a></p>
+          <p className='text-center redirect'>¿Aún no tienes cuenta? Pincha<Link to='/signup' className='dropdown-item inline'><u>aquí.</u></Link></p>
     
           <form onSubmit={handleSubmit}> 
     
             <Input 
-              label="Email"
+              label="Email:"
               placeholder="Introduce tu email"
               type="email"
               name="email"
@@ -56,7 +57,7 @@ function Login() {
             />
     
             <Input
-              label="Password"
+              label="Contraseña:"
               placeholder="Introduce tu contraseña"
               type="password"
               name="password"
@@ -67,7 +68,7 @@ function Login() {
               onBlur={handleBlur}
             />
 
-            <a clasName="" href="*">¿Olvidaste tu contraseña?</a>
+            <a className="" href="*">¿Olvidaste tu contraseña?</a>
     
             <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
               {isSubmitting ? 'Loading' : 'Login'}

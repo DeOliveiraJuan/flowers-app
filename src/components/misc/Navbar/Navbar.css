@@ -8,6 +8,11 @@
     background-color: #3A5248 !important;
   }
 
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+
 .btn-outline-light {
     border: none;
     }
@@ -16,6 +21,8 @@
     color: #A29F44;
     background-color: transparent;  
 }
+
+
 
 
 

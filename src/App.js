@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import NavBar from './components/misc/Navbar/Navbar'
+import FlowersScreen from "./screens/Flowers/FlowersScreen";
 //import { useAuthContext } from "./contexts/AuthContext";
 import HomeScreen from "./screens/Home/HomeScreen";
 import Login from './screens/Login/LoginScreen';
+import PlantsScreen from "./screens/Plants/PlantsScreen";
 import Signup from "./screens/Signup/SignupScreen";
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/plants" element={<PlantsScreen />} />
+        <Route path="/flowers" element={<FlowersScreen />} />
       </Routes>
     </div>
   );

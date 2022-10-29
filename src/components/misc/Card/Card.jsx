@@ -3,8 +3,8 @@ import './Card.css'
 
 function Card() {
     return (
-        <div className="row container-fluid d-flex justify-content-around mt-5">
-          <div className="card col-8 mt-3 p-0 border-0">
+        <div className="row d-flex justify-content-around mt-2 mr-2 align-items-center">
+          <div className="card mt-2 mr-4 p-0 border-0">
             <img className="card-img-top" src="https://img.ltwebstatic.com/images3_pi/2022/06/08/16546668675011fa3692865fce7bcd6738e6b1f8d4_thumbnail_900x.webp" alt="Card cap" />
             <div className="card-bottom d-flex align-items flex-direction: column">
             <div className='card-title-price mt-2 pl-1'>

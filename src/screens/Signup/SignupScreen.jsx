@@ -5,6 +5,7 @@ import Input from '../../components/misc/Input/Input';
 import { createUser } from '../../services/UserService';
 import SignupSchema from './SignupSchema';
 import './SignupScreen.css'
+import { Link } from 'react-router-dom';
 
 const INITIAL_VALUES = {
     name: '',
@@ -29,28 +30,16 @@ function Signup() {
     const navigate = useNavigate();
 
     function onSubmit(values) {
-        const formData = new FormData()
-        
-        console.log(values) //Valores correctos, está entrando
-        
-        for(let value in values) {
-            formData.append(value, values[value])
-        }
-        
-        console.log(formData) //Object vacío
-
-        createUser(formData)
+        createUser(values)
         .then(user => {
-            console.log('ENTRA EN CREATEUSER 👍🏻', user);
+
 
             navigate('/login', { state: {
                 email: values.email
             } })
         })
         .catch(err => {
-           // console.log(err.response.data)
-           console.log("ENTRA EN ERROR ❌")
-
+        
             err.response.data &&
              Object.keys(err.response.data.errors)
                 .forEach((errorKey) => {
@@ -62,15 +51,14 @@ function Signup() {
     })
 }
 
-
-
 return (
     <div className="signup container mt-5 w-25">
       <h1 className="text-center">Registrate</h1>
+      <p className='text-center redirect'>¿Ya estás registrado? Pincha<Link to='/login' className='dropdown-item inline'><u>aquí.</u></Link></p>
 
       <form onSubmit={handleSubmit}>
         <Input
-          label="Name"
+          label="Nombre:"
           type="text"
           placeholder="Add user name"
           name="name"
@@ -82,7 +70,7 @@ return (
         />
 
         <Input
-          label="Last name"
+          label="Apellido:"
           type="text"
           placeholder="Add user last name"
           name="lastName"
@@ -118,7 +106,7 @@ return (
         />
 
         <Input
-          label="Phone number"
+          label="Número de teléfono"
           placeholder="Add your phone number"
           name="phoneNumber"
           id="phoneNumber"
@@ -129,7 +117,7 @@ return (
         />
 
         <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
-          {isSubmitting ? 'Loading' : 'Submit'}
+          {isSubmitting ? 'Enviando' : 'Registrarme'}
         </button>
       </form>
       </div>
