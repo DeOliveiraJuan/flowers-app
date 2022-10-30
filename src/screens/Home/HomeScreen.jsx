@@ -12,10 +12,13 @@ const HomeScreen = () => {
         </div>
       </div>
       <h1 className="subtitle d-flex justify-content-center">Top ventas</h1>
-      <div className='container card-container d-flex justify-content-center'>
-      <Card />
-      <Card />
-      <Card />
+      <div className='card-container d-flex justify-content-around py-5'>
+        <div className='row'>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </div>
       </div>
     <footer className="bg-light text-center text-white">
       <div className="text-center p-3" style={{backgroundColor: "blue"}}>

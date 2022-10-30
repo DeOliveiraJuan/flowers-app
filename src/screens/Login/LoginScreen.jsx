@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import {  React, useContext } from 'react';
+import { React, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import Input from '../../components/misc/Input/Input';
 import AuthContext from '../../contexts/AuthContext';
