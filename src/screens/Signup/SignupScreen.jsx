@@ -5,7 +5,7 @@ import Input from '../../components/misc/Input/Input';
 import { createUser } from '../../services/UserService';
 import SignupSchema from './SignupSchema';
 import './SignupScreen.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const INITIAL_VALUES = {
     name: '',
@@ -29,17 +29,23 @@ function Signup() {
 
     const navigate = useNavigate();
 
+    const { state } = useLocation();
+    console.log(state)
+
     function onSubmit(values) {
         createUser(values)
         .then(user => {
-
+            console.log('ENTRA EN CREATEUSER 👍🏻', user);
 
             navigate('/login', { state: {
                 email: values.email
             } })
+
         })
         .catch(err => {
-        
+           console.log(err.response.data)
+           console.log("ENTRA EN ERROR ❌")
+
             err.response.data &&
              Object.keys(err.response.data.errors)
                 .forEach((errorKey) => {
@@ -54,7 +60,7 @@ function Signup() {
 return (
     <div className="signup container mt-5 w-25">
       <h1 className="text-center">Registrate</h1>
-      <p className='text-center redirect'>¿Ya estás registrado? Pincha<Link to='/login' className='dropdown-item inline'><u>aquí.</u></Link></p>
+      <p className='text-center'>¿Ya estás registrado? Pincha<Link to='/login' className='dropdown-item inline'><u>aquí.</u></Link></p>
 
       <form onSubmit={handleSubmit}>
         <Input
@@ -117,7 +123,7 @@ return (
         />
 
         <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
-          {isSubmitting ? 'Enviando' : 'Registrarme'}
+          {isSubmitting ? 'Cargando...(SIGNUP)' : 'Registrarme'}
         </button>
       </form>
       </div>

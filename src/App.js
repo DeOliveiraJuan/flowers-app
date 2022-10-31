@@ -7,10 +7,12 @@ import HomeScreen from "./screens/Home/HomeScreen";
 import Login from './screens/Login/LoginScreen';
 import PlantsScreen from "./screens/Plants/PlantsScreen";
 import Signup from "./screens/Signup/SignupScreen";
-import UsersDetail from "./screens/Users/UsersDetailScreen";
+import UserProfile from "./screens/Users/UserProfileScreen";
+//import UnprotectedRoute from './components/misc/UnprotectedRoute'
+//import ProtectedRoute from "./components/misc/ProtectedRoute";
 
 function App() {
-//const { isAuthFetched } = useAuthContext()
+// const { isAuthFetched } = useAuthContext()
 
   return (
     <div className="App">
@@ -19,9 +21,9 @@ function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/users/:id" element={<UserProfile />} />
         <Route path="/plants" element={<PlantsScreen />} />
         <Route path="/flowers" element={<FlowersScreen />} />
-        <Route path="/userprofile" element={<UsersDetail />} />
       </Routes>
     </div>
   );

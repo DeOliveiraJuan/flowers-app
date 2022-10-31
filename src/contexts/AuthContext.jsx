@@ -14,7 +14,7 @@ export const AuthContextProvider = ({ children }) => {
   const login = (token) => {
     setToken(token)
 
-    getUser();
+    getUser()
   }
 
   const getUser = (cb) => {
@@ -51,4 +51,4 @@ export const AuthContextProvider = ({ children }) => {
   )
 }
 
-export default AuthContext
+export default AuthContext;

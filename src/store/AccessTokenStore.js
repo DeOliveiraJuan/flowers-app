@@ -15,4 +15,4 @@ export const logout = () => {
     localStorage.removeItem(ACCESS_TOKEN_KEY);
 
     window.location.assign("/login");
-}
+};

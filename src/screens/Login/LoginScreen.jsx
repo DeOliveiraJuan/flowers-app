@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { React, useContext } from 'react';
+import { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import Input from '../../components/misc/Input/Input';
 import AuthContext from '../../contexts/AuthContext';
@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 function Login() {
     const { state } = useLocation()
     const { login } = useContext(AuthContext)
+
 
     const INITIAL_VALUES = {
         email: (state && state.email) || '',
@@ -71,7 +72,7 @@ function Login() {
             <a className="" href="*">¿Olvidaste tu contraseña?</a>
     
             <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
-              {isSubmitting ? 'Loading' : 'Login'}
+              {isSubmitting ? 'Cargando...(LOGIN)' : 'Login'}
             </button>
           </form>
         </div>
@@ -79,3 +80,4 @@ function Login() {
     }    
 
 export default Login;
+

@@ -4,4 +4,4 @@ const http = createHttp(false);
 
 export const login = (data) => http.post("/login", data);
 
-export const register = (data) => http.post("users", data);
+export const register = (data) => http.post("/users", data);
