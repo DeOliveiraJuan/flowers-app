@@ -1,0 +1,16 @@
+.btn-cart, .btn-cart:hover, .btn-cart:active, .btn-cart:visited {
+    background-color: #2C6456 !important;
+    border-radius: 20px;
+    width: 60px;
+    color: white;
+}
+
+.card{
+    background-color: #faf7f3;
+}
+
+.card-img-top {
+    max-width: 250px;
+    max-height: 250px;
+}
+

@@ -1,11 +1,11 @@
 .header {
     background: url('https://www.travelandleisure.com/thmb/_BjQvBjct9b8_9T8MnF7R-Ib5P8=/1600x1000/filters:fill(auto,1)/carlsbad-flower-fields-california-worker-FLOWERFIELDSCA0220-c3959d24a472463d96de3fb06a1fc9a5.jpg') no-repeat center;
     background-size: cover;
-    min-height: 80vh;
+    min-height: 70vh;
   }
 
 .navbar {
-    background-color: #3A5248 !important;
+    background-color:  #334173 !important;
   }
 
 .btn:focus,.btn:active {
@@ -18,7 +18,7 @@
     }
 
 .btn-outline-light:hover {
-    color: #A29F44;
+    color: paleturquoise;
     background-color: transparent;  
 }
 

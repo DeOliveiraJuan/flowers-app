@@ -1,30 +1,42 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import NavBar from './components/misc/Navbar/Navbar'
-import FlowersScreen from "./screens/Flowers/FlowersScreen";
-//import { useAuthContext } from "./contexts/AuthContext";
+import { useAuthContext } from "./contexts/AuthContext";
 import HomeScreen from "./screens/Home/HomeScreen";
-import Login from './screens/Login/LoginScreen';
-import PlantsScreen from "./screens/Plants/PlantsScreen";
 import Signup from "./screens/Signup/SignupScreen";
-import UserProfile from "./screens/Users/UserProfileScreen";
-//import UnprotectedRoute from './components/misc/UnprotectedRoute'
-//import ProtectedRoute from "./components/misc/ProtectedRoute";
+import Login from './screens/Login/LoginScreen';
+import Flowers from "./screens/Products/Flowers/FlowersScreen"
+import Plants from "./screens/Products/Plants/PlantsScreen";
+import UsersDetail from "./screens/Users/UserDetailScreen.jsx"
+import UsersList from "./screens/Users/UsersListScreen"
+import NewProduct from "./screens/Products/CreateProductScreen.jsx"
+import UnprotectedRoute from './components/misc/UnprotectedRoute'
+import ProtectedRoute from "./components/misc/ProtectedRoute";
+import Footer from "./components/misc/Footer/Footer";
 
 function App() {
-// const { isAuthFetched } = useAuthContext()
+const { isAuthFetched } = useAuthContext()
+console.log(isAuthFetched)
 
   return (
     <div className="App">
-     <NavBar />
+    <NavBar />
+    {isAuthFetched ? (
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/users/:id" element={<UserProfile />} />
-        <Route path="/plants" element={<PlantsScreen />} />
-        <Route path="/flowers" element={<FlowersScreen />} />
+        <Route path="/login" element={<UnprotectedRoute><Login /></UnprotectedRoute>} />
+        <Route path="/users" element={<ProtectedRoute><UsersDetail /></ProtectedRoute>} />
+        <Route path="/users/:id" element={<UsersDetail />} />
+        <Route path="/userslist" element={<ProtectedRoute onlyAdmin><UsersList /></ProtectedRoute>} />
+        <Route path="/products" element={<NewProduct />} />
+        <Route path="/products/flowers" element={<Flowers />} />
+        <Route path="/products/plants" element={<Plants />} />
       </Routes>
+    ) : (
+      <h3>Cargando</h3>
+    )}
+    <Footer />
     </div>
   );
 }

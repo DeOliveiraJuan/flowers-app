@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import { useAuthContext } from "../../../contexts/AuthContext"
+import { logout } from '../../../store/AccessTokenStore'
 
 function NavBar() {
+  const { user } = useAuthContext()
     return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link to="/"className="navbar-brand" >
@@ -15,8 +18,8 @@ function NavBar() {
         <div className="collapse navbar-collapse d-flex justify-content-center ml-5" id="navbarNavAltMarkup">
                 <div className="navbar-nav font-weight-bold">
                     <a className="nav-item nav-link" href="*">Entregas hoy</a>
-                    <Link to="/flowers" className="nav-item nav-link">Flores</Link>
-                    <Link to="/plants" className="nav-item nav-link">Plantas</Link>
+                    <Link to="/products/flowers" className="nav-item nav-link">Flores</Link>
+                    <Link to="/products/plants" className="nav-item nav-link">Plantas</Link>
                     <a className="nav-item nav-link" href="*">Eventos</a>
                     <a className="nav-item nav-link" href="*">Suscripción</a>
                 </div>
@@ -38,15 +41,21 @@ function NavBar() {
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/></svg>
               </button>
+              { user ? (
               <div className="dropdown-menu dropdown-menu-right">
-                <Link to='/login' className='dropdown-item'>Inicia sesión</Link>
+                <Link to='/users/me' className='dropdown-item'>Mi perfil</Link>
+                <Link onClick={() => logout()} to='/login' className='dropdown-item'>Cerrar sesión</Link>
+                </div>
+              ) : (
+              <div className="dropdown-menu dropdown-menu-right">
                 <Link to='/signup' className='dropdown-item'>Registrate</Link>
-              </div>
+                <Link to='/login' className='dropdown-item'>Inicia sesión</Link>
+                </div>
+                )}
             </div>
     </nav>
     )
 }
-
 
 
 export default NavBar;

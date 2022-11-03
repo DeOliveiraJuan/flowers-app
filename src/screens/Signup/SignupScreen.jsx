@@ -1,11 +1,10 @@
 import React from 'react'
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Input from '../../components/misc/Input/Input';
 import { createUser } from '../../services/UserService';
 import SignupSchema from './SignupSchema';
 import './SignupScreen.css'
-import { Link, useLocation } from 'react-router-dom';
 
 const INITIAL_VALUES = {
     name: '',
@@ -123,7 +122,7 @@ return (
         />
 
         <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
-          {isSubmitting ? 'Cargando...(SIGNUP)' : 'Registrarme'}
+          {isSubmitting ? 'Cargando...' : 'Registrarme'}
         </button>
       </form>
       </div>

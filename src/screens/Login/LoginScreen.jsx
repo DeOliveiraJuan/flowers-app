@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Input from '../../components/misc/Input/Input';
 import AuthContext from '../../contexts/AuthContext';
 import { login as userLogin } from '../../services/AuthService';
@@ -72,7 +72,7 @@ function Login() {
             <a className="" href="*">¿Olvidaste tu contraseña?</a>
     
             <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
-              {isSubmitting ? 'Cargando...(LOGIN)' : 'Login'}
+              {isSubmitting ? 'Cargando...' : 'Login'}
             </button>
           </form>
         </div>

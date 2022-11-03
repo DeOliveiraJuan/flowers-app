@@ -13,6 +13,7 @@ function Input({
                 id={id} placeholder={placeholder} 
                 onChange={onChange} value={value}
                 name={name} onBlur={onBlur}
+                checked={type === 'checkbox' && value}
             />
             {error && (
                 <div className="invalid-feedback">

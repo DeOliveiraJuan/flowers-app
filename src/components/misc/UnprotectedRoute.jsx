@@ -5,7 +5,7 @@ const UnprotectedRoute = ({ children }) => {
   const { user, isAuthFetched } = useAuthContext()
 
   if (isAuthFetched && user) {
-    return <Navigate to="/users" replace />;
+    return <Navigate to="/users/me" replace />;
   }
 
   return children;

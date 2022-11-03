@@ -1,29 +1,28 @@
 .HomeScreen {
     width: 100vw;
-    height: 70vh;
+    height: 90vh;
 }
 
 .hero-image {
-  background-image:  url("https://cdn.suwalls.com/wallpapers/flowers/beautiful-white-tulips-53777-1920x1200.jpg");
+  background-image:  url("../../../public/heroPetunia.jpg");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  filter: opacity(70%);
 }
 
 .hero-text {
-  text-align: center;
+  text-align: left;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 20%;
   transform: translate(-50%, -50%);
-  color: black
+  color: #334173
 }
 
 .subtitle {
-    background-color: #B35642;
+    background-color: #334173;
     margin: 0px !important;
     padding: 5px !important;
     color: #faf7f2; ;
@@ -33,7 +32,19 @@
   border-radius: 20px;
 }
 
-h1 {
-  border: none;
+.hero-title {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  color: #faf7f2;
+  font-size: 30px;
+}
+
+.hero-text btn-submit {
+  color: white;
+  background-color: #EE7854!important;
+  border-radius: 20px;
 }
 

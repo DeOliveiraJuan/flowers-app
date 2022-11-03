@@ -1,6 +1,6 @@
 body {
   background-color: #faf7f2;
-  font-family: 'DM sans' !important
+  font-family: 'DM sans' !important;
 }
 
 .error {
@@ -9,14 +9,15 @@ body {
 
 .btn-submit {
     color: white;
-    background-color: #A29F44 !important;
+    background-color: #EE7854 !important;
     border-radius: 20px;
 }
 
 .btn-submit:hover {
-  color:  #3A5248;
+  color:  #7D8EC4
 }
 
-
-
+.jumbotron {
+  background-color: #faf7f2 !important;
+}
 
