@@ -6,9 +6,8 @@ import AuthContext from '../../contexts/AuthContext';
 import { login as userLogin } from '../../services/AuthService';
 import LoginSchema from './LoginSchema'
 import './LoginScreen.css'
-import { Link } from 'react-router-dom'
 
-function Login() {
+function ForgotPassword() {
     const { state } = useLocation()
     const { login } = useContext(AuthContext)
 
@@ -40,9 +39,8 @@ function Login() {
 
     return (
         <div className="container mt-5 mb-2 w-25">
-          <h1 className='text-center'>Login</h1>
-          <p className='text-center redirect'>¿Aún no tienes cuenta? Pincha<Link to='/signup' className='dropdown-item inline'><u>aquí.</u></Link></p>
-    
+          <h1 className='text-center'>Cambiar contraseña</h1>
+          
           <form onSubmit={handleSubmit}> 
     
             <Input 
@@ -56,37 +54,25 @@ function Login() {
               error={errors.email}
               onBlur={handleBlur}
             />
-    
-            <Input
-              label="Contraseña:"
-              placeholder="Introduce tu contraseña"
-              type="password"
-              name="password"
-              id="password"
-              value={values.password}
+
+            <Input 
+              label="Repite tu email:"
+              placeholder="Introduce tu email"
+              type="email"
+              name="email"
+              id="email"
+              value={values.email}
               onChange={handleChange}
-              error={errors.password}
+              error={errors.email}
               onBlur={handleBlur}
             />
 
-            <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="dropdownCheck" />
-                <label className="form-check-label" htmlFor="dropdownCheck">
-                  Recordar mis datos
-                </label>
-              </div>
-
-            <div>
-            <Link to='/forgotpassword'><a className="mt-3" href="/forgotpassword">¿Olvidaste tú contraseña?</a></Link>
-            </div>
-
             <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
-              {isSubmitting ? 'Cargando...' : 'Login'}
+              {isSubmitting ? 'Cargando...' : 'Cambiar contraseña'}
             </button>
           </form>
         </div>
       )
     }    
 
-export default Login;
-
+export default ForgotPassword;

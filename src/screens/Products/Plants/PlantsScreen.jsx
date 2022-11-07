@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import  ProductCard from '../../../components/misc/Cards/ProductCard';
 import Filterbar from '../../../components/misc/Filterbar/Filterbar'
-import { getPlants, getFlowers } from '../../../services/ProductService';
+import { getPlants } from '../../../services/ProductService';
 import './PlantsScreen.css'
 
 const PlantsScreen = () => {

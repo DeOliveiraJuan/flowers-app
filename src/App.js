@@ -10,13 +10,14 @@ import Plants from "./screens/Products/Plants/PlantsScreen";
 import UsersDetail from "./screens/Users/UserDetailScreen.jsx"
 import UsersList from "./screens/Users/UsersListScreen"
 import NewProduct from "./screens/Products/CreateProductScreen.jsx"
+import ProductDetailScreen from "./screens/Products/ProductDetailScreen";
 import UnprotectedRoute from './components/misc/UnprotectedRoute'
 import ProtectedRoute from "./components/misc/ProtectedRoute";
 import Footer from "./components/misc/Footer/Footer";
+import ForgotPassword from "./screens/Login/ForgotPasswordScreen";
 
 function App() {
 const { isAuthFetched } = useAuthContext()
-console.log(isAuthFetched)
 
   return (
     <div className="App">
@@ -26,10 +27,12 @@ console.log(isAuthFetched)
         <Route path="/" element={<HomeScreen />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<UnprotectedRoute><Login /></UnprotectedRoute>} />
+        <Route path="/forgotpassword" element={<UnprotectedRoute><ForgotPassword /></UnprotectedRoute>} />
         <Route path="/users" element={<ProtectedRoute><UsersDetail /></ProtectedRoute>} />
         <Route path="/users/:id" element={<UsersDetail />} />
         <Route path="/userslist" element={<ProtectedRoute onlyAdmin><UsersList /></ProtectedRoute>} />
         <Route path="/products" element={<NewProduct />} />
+        <Route path="/products/:id" element={<ProductDetailScreen />} />
         <Route path="/products/flowers" element={<Flowers />} />
         <Route path="/products/plants" element={<Plants />} />
       </Routes>

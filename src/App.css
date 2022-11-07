@@ -1,6 +1,11 @@
 body {
   background-color: #faf7f2;
   font-family: 'DM sans' !important;
+  
+}
+
+.App {
+  height: 100vh;
 }
 
 .error {
@@ -10,7 +15,6 @@ body {
 .btn-submit {
     color: white;
     background-color: #EE7854 !important;
-    border-radius: 20px;
 }
 
 .btn-submit:hover {
@@ -20,4 +24,5 @@ body {
 .jumbotron {
   background-color: #faf7f2 !important;
 }
+
 

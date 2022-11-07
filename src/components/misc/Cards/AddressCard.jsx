@@ -1,21 +1,22 @@
-import './UserCard.css'
+import './AddressCard.css'
 
-
-function UserCard(user) {
+function AddressCard(user) {
     return (
       <div className='card-container col-8 d-flex flex-wrap justify-content-between align-content-start mt-4'>
         <div className='row'>
          <div className="card mx-2 my-2 card-border">
           <div className="card-body p-0" style={{width: 400}} >
               <div className="card-title p-3 m-0 ">
-               <h4><b>Datos personales</b></h4>
+               <h4><b>Casa</b></h4>
                <hr/>
                </div>
                <ul>
-                    <li name={user.name}><b>Nombre:</b> {user.name}</li>
-                    <li lastname={user.lastName}><b>Apellido:</b> {user.lastName}</li>
-                    <li phonenumber={user.phoneNumber}> <b>Teléfono:</b> {user.phoneNumber}</li>
-                    <li email={user.email}><b>Email:</b> {user.email}</li>
+                    <li street={user.street}><b>Calle:</b> {user.name}</li>
+                    <li streetnumber={user.streetNumber}><b>Número:</b> {user.lastName}</li>
+                    <li floor={user.floor}> <b>Piso:</b> {user.phoneNumber}</li>
+                    <li door={user.door}><b>Puerta:</b> {user.email}</li>
+                    <li city={user.city}><b>Ciudad:</b> {user.email}</li>
+                    <li zipcode={user.zipCode}><b>Código postal:</b> {user.email}</li>
                </ul>
               </div>
               <button type="submit" className="btn btn-cart btn-block align-self-end mt-0 mb-4 mr-4 p-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
@@ -27,4 +28,4 @@ function UserCard(user) {
     )
 };
 
-export default UserCard;
+export default AddressCard;
