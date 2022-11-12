@@ -16,7 +16,7 @@ const FlowersScreen = () => {
 
     return (
         <div className='container'>
-         <h1 className='text-start ml-4 pt-4'>PLANTAS</h1>
+         <h1 className='text-start ml-4 pt-4'>RAMOS</h1>
             <div className='row d-flex justify-content-around'>
                 <div className='col-3'>
                 <Filterbar />

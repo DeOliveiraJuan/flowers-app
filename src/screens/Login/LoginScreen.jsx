@@ -45,7 +45,7 @@ function Login() {
     
           <form onSubmit={handleSubmit}> 
     
-            <Input 
+            <Input
               label="Email:"
               placeholder="Introduce tu email"
               type="email"
@@ -80,9 +80,11 @@ function Login() {
             <Link to='/forgotpassword'><a className="mt-3" href="/forgotpassword">¿Olvidaste tú contraseña?</a></Link>
             </div>
 
-            <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4">
-              {isSubmitting ? 'Cargando...' : 'Login'}
+            <div className='btn-footer d-flex justify-content-center my-4'>
+            <button type="submit" className="btn btn-submit font-weight-bold btn-block">
+              {isSubmitting ? 'Cargando...' : 'Entrar'}
             </button>
+            </div>
           </form>
         </div>
       )

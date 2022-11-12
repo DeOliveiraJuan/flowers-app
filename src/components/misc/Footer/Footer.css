@@ -1,5 +1,10 @@
 .footer {
     background-color: #2C6456;
-    padding: 8px;
-    text-align: center;
+    color: white;
+    padding-top: 40px;
+    padding-right: 50px;
   }
+
+  .footer-link, .footer-link:hover {
+  color: white;
+}

@@ -116,7 +116,7 @@ function NewProduct() {
           onBlur={handleBlur}
         />
 
-        <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
+        <button type="submit" className="btn btn-submit font-weight-bold btn-block my-5" disabled={isSubmitting}>
           {isSubmitting ? 'Creando...' : 'Crear producto'}
         </button>
       </form>

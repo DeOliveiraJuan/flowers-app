@@ -1,11 +1,6 @@
 body {
-  background-color: #faf7f2;
+  background-color: #f3f4f4;
   font-family: 'DM sans' !important;
-  
-}
-
-.App {
-  height: 100vh;
 }
 
 .error {
@@ -18,11 +13,11 @@ body {
 }
 
 .btn-submit:hover {
-  color:  #7D8EC4
+  color:  white
 }
 
 .jumbotron {
-  background-color: #faf7f2 !important;
+  background-color:  #f3f4f4 !important;
 }
 
 

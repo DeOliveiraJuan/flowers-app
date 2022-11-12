@@ -1,6 +1,5 @@
-import React from 'react'
 import { useFormik } from 'formik';
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Input from '../../components/misc/Input/Input';
 import { createUser } from '../../services/UserService';
 import SignupSchema from './SignupSchema';
@@ -27,9 +26,6 @@ function Signup() {
     })
 
     const navigate = useNavigate();
-
-    const { state } = useLocation();
-    console.log(state)
 
     function onSubmit(values) {
         createUser(values)
@@ -120,10 +116,11 @@ return (
           error={errors.phoneNumber}
           onBlur={handleBlur}
         />
-
-        <button type="submit" className="btn btn-submit font-weight-bold btn-block mt-4" disabled={isSubmitting}>
+        <div className='btn-footer d-flex justify-content-center my-4'>
+        <button type="submit" className="btn btn-submit font-weight-bold btn-block" disabled={isSubmitting}>
           {isSubmitting ? 'Cargando...' : 'Registrarme'}
         </button>
+        </div>
       </form>
       </div>
 )

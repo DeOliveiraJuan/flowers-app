@@ -1,9 +1,9 @@
 import React from 'react';
 import UserList from '../../components/users/UserList/UserList';
-import { useAuthContext } from '../../contexts/AuthContext'
+//import { useAuthContext } from '../../contexts/AuthContext'
 
 const UsersListScreen = () => {
-    const { user } = useAuthContext()
+    //const { user } = useAuthContext()
 
     return (
     <div>

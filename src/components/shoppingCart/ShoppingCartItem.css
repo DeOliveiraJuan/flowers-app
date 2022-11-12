@@ -1,0 +1,16 @@
+.cart-dropdown {
+    width: 400px;
+}
+
+.product-name {
+    width: 150px;
+}
+
+.btn-dropdown {
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 5px;
+    background-color:  #334173;
+    border: none;
+    color: white;
+}

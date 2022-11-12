@@ -15,6 +15,8 @@ import UnprotectedRoute from './components/misc/UnprotectedRoute'
 import ProtectedRoute from "./components/misc/ProtectedRoute";
 import Footer from "./components/misc/Footer/Footer";
 import ForgotPassword from "./screens/Login/ForgotPasswordScreen";
+import AddressForm from "./screens/Address/AddressScreen";
+import ShoppingCartDetail from "./screens/ShoppingCart/ShoppingCartDetail";
 
 function App() {
 const { isAuthFetched } = useAuthContext()
@@ -24,6 +26,7 @@ const { isAuthFetched } = useAuthContext()
     <NavBar />
     {isAuthFetched ? (
       <Routes>
+      
         <Route path="/" element={<HomeScreen />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<UnprotectedRoute><Login /></UnprotectedRoute>} />
@@ -31,10 +34,12 @@ const { isAuthFetched } = useAuthContext()
         <Route path="/users" element={<ProtectedRoute><UsersDetail /></ProtectedRoute>} />
         <Route path="/users/:id" element={<UsersDetail />} />
         <Route path="/userslist" element={<ProtectedRoute onlyAdmin><UsersList /></ProtectedRoute>} />
-        <Route path="/products" element={<NewProduct />} />
+        <Route path="/users/addresses" element={<ProtectedRoute><AddressForm /></ProtectedRoute>} />
+        <Route path="/products" element={<ProtectedRoute onlyAdmin><NewProduct /></ProtectedRoute>} />
         <Route path="/products/:id" element={<ProductDetailScreen />} />
         <Route path="/products/flowers" element={<Flowers />} />
         <Route path="/products/plants" element={<Plants />} />
+        <Route path="/users/cart" element={<ShoppingCartDetail />} />
       </Routes>
     ) : (
       <h3>Cargando</h3>

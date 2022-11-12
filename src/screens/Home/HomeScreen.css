@@ -1,4 +1,4 @@
-.HomeScreen {
+.home {
     width: 100vw;
     height: 90vh;
 }
@@ -28,8 +28,6 @@
     color: #faf7f2; ;
 }
 
-
-
 .hero-title {
   font-size: 70px;
   font-weight: bold;
@@ -45,4 +43,59 @@
   background-color: #EE7854!important;
   border-radius: 20px;
 }
+
+.container-midpage{
+  width: 100vw;
+  height: 260vh;
+  background-color: #FAE9BF;
+}
+
+.top-sales{
+  color: #334173;
+}
+
+.container-midpage {
+  color: #334173;
+  padding: 100px;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: start;
+	align-items: center;
+	align-content: stretch;
+  text-align: center; 
+}
+
+.container-midpage h2 {
+  font-size: 70px;
+}
+
+.container-midpage p {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.midpage-images {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 10px;
+}
+
+.midpage-image-floricultor {
+  max-width: 1400px;
+  max-height: 1200px;
+  margin-top: 40px;
+}
+
+.endpage {
+  background-color: #f3f4f4;;
+  height: 90vh;
+}
+
 

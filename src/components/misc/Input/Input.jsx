@@ -9,7 +9,7 @@ function Input({
                 {label}
             </label>
             <input
-                type={type} className={`form-control ${error ? 'is-invalid' : ''}`}
+                type={type} className={`form-control ${error ? 'is-invalid' : '' }`}
                 id={id} placeholder={placeholder} 
                 onChange={onChange} value={value}
                 name={name} onBlur={onBlur}

@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { logout } from "../../../store/AccessTokenStore";
-import ShoppingCart from "../../shoppingCart/ShoppingCart";
+import ShoppingCartItem from "../../shoppingCart/ShoppingCartItem";
+import { useShoppingCartContext } from "../../../contexts/ShoppingCartContext"
 
 function NavBar() {
   const { user } = useAuthContext();
+  const { cart } = useShoppingCartContext();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link
         to="/"
         className="navbar-brand"
-        src="../../../../public/petuniaLogo.png"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +43,7 @@ function NavBar() {
       >
         <div className="navbar-nav font-weight-bold">
           <Link to="/products/flowers" className="nav-item nav-link">
-            Flores
+            Ramos
           </Link>
           <Link to="/products/plants" className="nav-item nav-link">
             Plantas
@@ -74,11 +76,16 @@ function NavBar() {
           </svg>
         </button>
         <div className="dropdown-menu dropdown-menu-right">
-          <h5>Total carrito</h5>
-          <Link to="/products/:id" className="dropdown-item">
-            <ShoppingCart />
-          </Link>
-        </div>
+          <h6 class="dropdown-header">Mi carrito</h6>
+          {cart?.products?.map((item) => {
+          return <ShoppingCartItem key={item.productId.id} product={item} />;
+           })}
+          <div class="dropdown-divider"></div>
+          <div className="dropdown-footer d-flex justify-content-around">
+            <p className="m-0 pt-3"><b>Total:</b></p>
+           <Link to="/users/cart"><button className="btn btn-light m-2">Pagar</button></Link>
+           </div>
+          </div>
       </div>
       <div className="btn-group">
         <button

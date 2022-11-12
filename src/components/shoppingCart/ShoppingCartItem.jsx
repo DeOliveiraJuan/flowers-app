@@ -1,26 +1,32 @@
-import React from 'react'
+import React from "react";
+import { useShoppingCartContext } from "../../contexts/ShoppingCartContext";
+import './ShoppingCartItem.css'
 
-
-const ShoppingCartItem = ({ product }) => {  
+const ShoppingCartItem = ({ product }) => {
+  const { addToCart, removeFromCart } = useShoppingCartContext();
+ 
   return (
-    <div className='container d-flex flex-row justify-content-between'>
-        <div className='product-image'>
-        <p>{product.photo}</p>
-        </div>
-        <div className='product-description'>
-        <p>{product.price}</p>
-        </div>
-        <button className='remove-product'>
-        <p>-</p>
-        </button>
-        <button type='add-product'>
-        <p>+</p>
-        </button>
-        <div className='total'>
-        <p>TOTAL</p>
-        </div>
+    <div className="dropdown-item cart-dropdown d-flex justify-content-between ">
+        <p className="product-name p-2"><b>{product.productId.name}</b></p>
+        <p className="p-2 product-price">{product.productId.price}€</p>
+      <button
+        type="button"
+        className="btn-dropdown remove-product mt-1"
+        onClick={() => removeFromCart(product.productId.id)}
+      >
+        -
+      </button>
+      <p className="product-qty py-2 px-0">{product.qty}</p>
+      <button
+        type="button"
+        className="btn-dropdown add-product mt-1"
+        onClick={() => addToCart(product.productId.id)}
+      >
+        +
+      </button>
+    <div className="item-total"></div>
     </div>
-  )
-}
+  );
+};
 
 export default ShoppingCartItem;
