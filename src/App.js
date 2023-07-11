@@ -17,6 +17,7 @@ import Footer from "./components/misc/Footer/Footer";
 import ForgotPassword from "./screens/Login/ForgotPasswordScreen";
 import AddressForm from "./screens/Address/AddressScreen";
 import ShoppingCartDetail from "./screens/ShoppingCart/ShoppingCartDetail";
+import ContactForm from "./screens/Contact/ContactScreen.jsx"
 
 function App() {
 const { isAuthFetched } = useAuthContext()
@@ -40,6 +41,7 @@ const { isAuthFetched } = useAuthContext()
         <Route path="/products/flowers" element={<Flowers />} />
         <Route path="/products/plants" element={<Plants />} />
         <Route path="/users/cart" element={<ShoppingCartDetail />} />
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
     ) : (
       <h3>Cargando</h3>

@@ -9,8 +9,11 @@
     background-color: #f3f4f4;
 }
 
+.card-img-top:hover {
+    filter: brightness(.9);
+}
+
 .card-img-top {
     max-width: 250px;
     max-height: 250px;
 }
-

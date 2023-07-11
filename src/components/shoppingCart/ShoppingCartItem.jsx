@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useShoppingCartContext } from "../../contexts/ShoppingCartContext";
 import './ShoppingCartItem.css'
 
 const ShoppingCartItem = ({ product }) => {
   const { addToCart, removeFromCart } = useShoppingCartContext();
- 
   return (
     <div className="dropdown-item cart-dropdown d-flex justify-content-between ">
         <p className="product-name p-2"><b>{product.productId.name}</b></p>
@@ -24,7 +23,9 @@ const ShoppingCartItem = ({ product }) => {
       >
         +
       </button>
-    <div className="item-total"></div>
+    <div className="item-total mt-2">
+      <b>{product.productId.price * product.qty}€</b>
+    </div>
     </div>
   );
 };

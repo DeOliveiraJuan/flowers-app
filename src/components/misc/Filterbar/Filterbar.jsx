@@ -3,12 +3,12 @@ import './Filterbar.css'
 function Filterbar() {
     return (
         <div className="container">
-        <div className="row py-5">
+        <div className="row">
             <div className="col-2 order-2" id="sticky-sidebar">
                 <div className="sticky-top">  
                 </div>
             </div>
-            <div className="col-12" id="main">
+            <div className="col" id="main">
                 <h5 className="font-weight-bold">Precio</h5>
                 <form>
                     <input type="checkbox" id="price-1" name="price-1" className='mr-2' />

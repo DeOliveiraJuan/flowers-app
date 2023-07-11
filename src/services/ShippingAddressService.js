@@ -4,7 +4,7 @@ const http = createHttp(true);
 
 export const getAddresses = () =>
   http.get("/users/addresses").then((res) => res);
-  
+
 export const createAddress = (body) =>
   http.post("/users/addresses", body).then((res) => res);
 

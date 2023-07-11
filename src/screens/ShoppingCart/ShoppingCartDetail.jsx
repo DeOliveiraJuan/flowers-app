@@ -3,8 +3,11 @@ import './ShoppingCartDetail.css'
 const ShoppingCartDetail = () => {
     return (
         <div className="container">
+            <div className='cart-image d-flex justify-content-center'>
 
-            <h1>ESTA ENTRANDO EN SC DETAIL</h1>        
+            </div>
+
+            <h1>SITIO EN CONSTRUCCION</h1>        
 
         </div>
     )

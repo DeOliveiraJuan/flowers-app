@@ -17,16 +17,17 @@ const FlowersScreen = () => {
     return (
         <div className='container'>
          <h1 className='text-start ml-4 pt-4'>RAMOS</h1>
-            <div className='row d-flex justify-content-around'>
-                <div className='col-3'>
+            <div className='row py-5'>
+                <div className='col-2'>
                 <Filterbar />
                 </div>
-                <div className='card-container col-8 d-flex flex-wrap justify-content-between align-content-start py-5'>
+                <div className='col-10'>
                     <div className='row'>
+                        <div className='d-flex justify-content-center align-items-center flex-wrap'>
                         {flowers.map((flower) => <ProductCard key={flower.id} product={flower}/>)}
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

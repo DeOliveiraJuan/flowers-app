@@ -16,19 +16,20 @@ const PlantsScreen = () => {
 
     return (
         <div className='container'>
-         <h1 className='text-start ml-4 pt-4'>PLANTAS</h1>
-            <div className='row d-flex justify-content-around'>
-                <div className='col-3'>
-                <Filterbar />
-                </div>
-
-                <div className='card-container col-8 d-flex flex-wrap justify-content-between align-content-start py-5'>
-                    <div className='row'>
-                        {plants.map((plant) => <ProductCard key={plant.id} product={plant}/>)}
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1 className='text-start ml-4 pt-4'>PLANTAS</h1>
+           <div className='row py-5'>
+               <div className='col-2'>
+               <Filterbar />
+               </div>
+               <div className='col-10'>
+                   <div className='row'>
+                       <div className='d-flex justify-content-center align-items-center flex-wrap'>
+                       {plants.map((plant) => <ProductCard key={plant.id} product={plant}/>)}
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
     )
 }
 

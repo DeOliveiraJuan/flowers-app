@@ -42,18 +42,18 @@ function NavBar() {
         id="navbarNavAltMarkup"
       >
         <div className="navbar-nav font-weight-bold">
+        <Link to="/" className="nav-item nav-link">
+            Home
+          </Link>
           <Link to="/products/flowers" className="nav-item nav-link">
             Ramos
           </Link>
           <Link to="/products/plants" className="nav-item nav-link">
             Plantas
           </Link>
-          <a className="nav-item nav-link" href="*">
-            Eventos
-          </a>
-          <a className="nav-item nav-link" href="*">
-            Suscripción
-          </a>
+          <Link to="/contact" className="nav-item nav-link">
+            Contácto
+          </Link>
         </div>
       </div>
       <div className="btn-group">
@@ -76,11 +76,11 @@ function NavBar() {
           </svg>
         </button>
         <div className="dropdown-menu dropdown-menu-right">
-          <h6 class="dropdown-header">Mi carrito</h6>
+          <h6 className="dropdown-header">Mi carrito</h6>
           {cart?.products?.map((item) => {
           return <ShoppingCartItem key={item.productId.id} product={item} />;
            })}
-          <div class="dropdown-divider"></div>
+          <div className="dropdown-divider"></div>
           <div className="dropdown-footer d-flex justify-content-around">
             <p className="m-0 pt-3"><b>Total:</b></p>
            <Link to="/users/cart"><button className="btn btn-light m-2">Pagar</button></Link>

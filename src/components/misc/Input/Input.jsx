@@ -1,7 +1,7 @@
 import './Input.css'
 
 function Input({
-    type = "text", label, placeholder, onChange, value, id, name, error, onBlur
+    type = "text", label, placeholder, onChange, value, id, name, error, onBlur, 
 }) {
     return (
         <div className="mb-3">

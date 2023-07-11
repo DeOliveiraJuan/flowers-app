@@ -1,37 +1,44 @@
 import "./AddressCard.css";
-import { deleteAddress } from '../../../services/ShippingAddressService'
 
-function AddressCard(address) {
-
-
+function AddressCard({
+  _id,
+  addressName,
+  street,
+  streetNumber,
+  floor,
+  door,
+  city,
+  zipcode,
+  onDeleteAddress,
+}) {
   return (
     <div className="card card-address mx-2 my-4 card-border">
       <div className="card-body p-0">
         <div className="card-title p-1 m-0 ">
-          <h4 addressname={address.addressname}>
-            <b>{address.addressname}</b>
+          <h4 addressName={addressName}>
+            <b>{addressName}</b>
           </h4>
           <hr />
         </div>
         <ul>
-          <li street={address.street}>
-            <b>Calle:</b> {address.street}
+          <li street={street}>
+            <b>Calle:</b> {street}
           </li>
-          <li streetnumber={address.streetnumber}>
-            <b>Número:</b> {address.streetnumber}
+          <li streetNumber={streetNumber}>
+            <b>Número:</b> {streetNumber}
           </li>
-          <li floor={address.floor}>
+          <li floor={floor}>
             {" "}
-            <b>Piso:</b> {address.floor}
+            <b>Piso:</b> {floor}
           </li>
-          <li door={address.door}>
-            <b>Puerta:</b> {address.door}
+          <li door={door}>
+            <b>Puerta:</b> {door}
           </li>
-          <li city={address.city}>
-            <b>Ciudad:</b> {address.city}
+          <li city={city}>
+            <b>Ciudad:</b> {city}
           </li>
-          <li zipcode={address.zipcode}>
-            <b>Código postal:</b> {address.zipcode}
+          <li zipcode={zipcode}>
+            <b>Código postal:</b> {zipcode}
           </li>
         </ul>
       </div>
@@ -48,7 +55,11 @@ function AddressCard(address) {
             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
           </svg>
         </button>
-        <button onClick={() => deleteAddress(address.id)} type="submit" className="btn btn-delete">
+        <button
+          onClick={() => onDeleteAddress(_id)}
+          type="submit"
+          className="btn btn-delete"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
